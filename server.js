@@ -59,7 +59,8 @@ const cronJob = cron.job('0 */12 * * *', async function(){
 
 });
 cronJob.start()
-if (process.env.NODE_ENV === 'production') {
+const NODE_ENV='production'
+if (NODE_ENV === 'production') {
     // Set static folder
     app.use(express.static('client/build'));
 

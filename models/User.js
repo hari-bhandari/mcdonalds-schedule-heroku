@@ -55,8 +55,8 @@ UserSchema.methods.postSchedule=async function(id){
 }
 //sign jwt and return
 UserSchema.methods.getSignedJwtToken=function(){
-    return jwt.sign({userId:this.userId},process.env.JWT_SECRET,{
-        expiresIn: process.env.JWT_EXPIRE
+    return jwt.sign({userId:this.userId},'secret',{
+        expiresIn: '30d'
     })
 }
 //Match user entered password to hashed password
